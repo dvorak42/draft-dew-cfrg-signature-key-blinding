@@ -1480,7 +1480,7 @@ UnblindPublicKey(pk, skB) = ScalarMult(pk, ModInverse(HashToScalar(skB), p))
         </h3>
 <p id="section-6.2-1">BlindKeySign transforms the signing key skS by the private key skB into a new
 signing key, skR, and then invokes the existing ECDSA signing procedure. More
-specifically, skR = skS * HashToScalar(skR) (mod L).<a href="#section-6.2-1" class="pilcrow">¶</a></p>
+specifically, skR = skS * HashToScalar(skB) (mod p).<a href="#section-6.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
