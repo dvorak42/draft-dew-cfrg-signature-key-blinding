@@ -15,11 +15,11 @@ all signatures produced using the blinded key pair are unlinkable to the
 unblinded key pair. Moreover, signatures produced using blinded key pairs 
 are indistinguishable from signatures produced using unblinded key pairs. 
     " name="description">
-<meta content="xml2rfc 3.12.0" name="generator">
+<meta content="xml2rfc 3.12.3" name="generator">
 <meta content="Internet-Draft" name="keyword">
 <meta content="draft-dew-cfrg-signature-key-blinding-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.12.0
+  xml2rfc 3.12.3
     Python 3.9.7
     appdirs 1.4.4
     ConfigArgParse 1.3
@@ -29,6 +29,7 @@ are indistinguishable from signatures produced using unblinded key pairs.
     Jinja2 2.11.3
     kitchen 1.2.6
     lxml 4.6.5
+    MarkupSafe 2.0.1
     pycountry 20.7.3
     pyflakes 2.3.1
     PyYAML 5.4.1
@@ -1018,11 +1019,11 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Key Blinding for Signature Schemes</td>
-<td class="right">February 2022</td>
+<td class="right">March 2022</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Denis, et al.</td>
-<td class="center">Expires 7 August 2022</td>
+<td class="center">Expires 8 September 2022</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1035,12 +1036,12 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <dd class="internet-draft">draft-dew-cfrg-signature-key-blinding-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2022-02-03" class="published">3 February 2022</time>
+<time datetime="2022-03-07" class="published">7 March 2022</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2022-08-07">7 August 2022</time></dd>
+<dd class="expires"><time datetime="2022-09-08">8 September 2022</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1052,7 +1053,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <div class="org">University of Waterloo</div>
 </div>
 <div class="author">
-      <div class="author-name">C.A. Wood</div>
+      <div class="author-name">C. A. Wood</div>
 <div class="org">Cloudflare, Inc.</div>
 </div>
 </dd>
@@ -1101,7 +1102,7 @@ are indistinguishable from signatures produced using unblinded key pairs.<a href
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 7 August 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 8 September 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1132,12 +1133,17 @@ are indistinguishable from signatures produced using unblinded key pairs.<a href
 <nav class="toc"><ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.1">
+                <p id="section-toc.1-1.1.2.1.1" class="keepWithNext"><a href="#section-1.1" class="xref">1.1</a>.  <a href="#name-disclaimer" class="xref">DISCLAIMER</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="xref">2</a>.  <a href="#name-conventions-and-definitions" class="xref">Conventions and Definitions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="xref">3</a>.  <a href="#name-key-blinding" class="xref">Key Blinding</a></p>
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="xref">3</a>.  <a href="#name-key-blinding" class="xref">Key Blinding</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-ed25519ph-ed25519ctx-and-ed" class="xref">Ed25519ph, Ed25519ctx, and Ed25519</a></p>
@@ -1234,6 +1240,16 @@ In effect, the witness "blinds" the key pair associated with a message signature
 procedures in <span>[<a href="#RFC8032" class="xref">RFC8032</a>]</span> to support this blinding operation, referred to as key
 blinding. It also specifies an extension to <span>[<a href="#ECDSA" class="xref">ECDSA</a>]</span> that enables the same 
 functionality.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<div id="disclaimer">
+<section id="section-1.1">
+        <h3 id="name-disclaimer">
+<a href="#section-1.1" class="section-number selfRef">1.1. </a><a href="#name-disclaimer" class="section-name selfRef">DISCLAIMER</a>
+        </h3>
+<p id="section-1.1-1">This document is a work in progress and is still undergoing security analysis.
+As such, it <span class="bcp14">MUST NOT</span> be used for real world applications. See
+<a href="#sec-considerations" class="xref">Section 7</a> for additional information.<a href="#section-1.1-1" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1432,10 +1448,11 @@ using the modified scalar s, public key A, and string prefix.<a href="#section-5
       <h2 id="name-ecdsa">
 <a href="#section-6" class="section-number selfRef">6. </a><a href="#name-ecdsa" class="section-name selfRef">ECDSA</a>
       </h2>
-<p id="section-6-1">This section describes implementations of BlindPublicKey, UnblindPublicKey, and BlindKeySign as 
+<p id="section-6-1">[[DISCLAIMNER: Multiplicative blinding for ECDSA is known to be NOT be SUF-CMA-secure in the presence of an adversary that controls the blinding value. <span>[<a href="#MSMHI15" class="xref">MSMHI15</a>]</span> describes this in the context of related-key attacks. This variant may likely be removed in followup versions of this document based on further analysis.]]<a href="#section-6-1" class="pilcrow">¶</a></p>
+<p id="section-6-2">This section describes implementations of BlindPublicKey, UnblindPublicKey, and BlindKeySign as 
 functions implemented on top of an existing <span>[<a href="#ECDSA" class="xref">ECDSA</a>]</span> implementation. In the descriptions below,
 let L be the order of the corresponding elliptic curve group used for ECDSA. For example, for 
-P-256, L = 2^256 - 2^224 + 2^192 + 2^96 - 1.<a href="#section-6-1" class="pilcrow">¶</a></p>
+P-256, L = 2^256 - 2^224 + 2^192 + 2^96 - 1.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <div id="blindpublickey-and-unblindpublickey-2">
 <section id="section-6.1">
         <h3 id="name-blindpublickey-and-unblindpub">
@@ -1465,7 +1482,7 @@ specifically, skR = skS * skR (mod L).<a href="#section-6.2-1" class="pilcrow">�
 </div>
 </section>
 </div>
-<div id="security-considerations">
+<div id="sec-considerations">
 <section id="section-7">
       <h2 id="name-security-considerations">
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
@@ -1474,6 +1491,12 @@ specifically, skR = skS * skR (mod L).<a href="#section-6.2-1" class="pilcrow">�
 Tor's Hidden Service feature. Security analysis for that feature is contained
 <span>[<a href="#TORBLINDING" class="xref">TORBLINDING</a>]</span>. For EdDSA, further analysis is needed to ensure this is compliant 
 with the signature algorithm described in <span>[<a href="#RFC8032" class="xref">RFC8032</a>]</span>.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-2"><span>[<a href="#MSMHI15" class="xref">MSMHI15</a>]</span> demonstrate that ECDSA with attacker-controlled multiplicative blinding
+for producing related keys can be abused to produce forgeries. In particular,
+if an attacker can control the private blinding key used in BlindKeySign, they
+can construct a forgery over a different message that validates under a different
+public key. Further analysis is needed to determine whether or not it is safe
+to keep this functionality in the specification given this problem.<a href="#section-7-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
@@ -1604,6 +1627,10 @@ signature: 4a3565e3206dacd43a0fbea32af287af96f48e4ba942789ea6202b5b09441
 <dt id="ESS21">[ESS21]</dt>
         <dd>
 <span class="refAuthor">Eaton, E.</span>, <span class="refAuthor">Stebila, D.</span>, and <span class="refAuthor">R. Stracovsky</span>, <span class="refTitle">"Post-Quantum Key-Blinding for Authentication in Anonymity Networks"</span>, <time datetime="2021" class="refDate">2021</time>, <span>&lt;<a href="https://eprint.iacr.org/2021/963">https://eprint.iacr.org/2021/963</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="MSMHI15">[MSMHI15]</dt>
+        <dd>
+<span class="refAuthor">Morita, H.</span>, <span class="refAuthor">Schuldt, J.</span>, <span class="refAuthor">Matsuda, T.</span>, <span class="refAuthor">Hanaoka, G.</span>, and <span class="refAuthor">T. Iwata</span>, <span class="refTitle">"On the Security of the Schnorr Signature Scheme and DSA Against Related-Key Attacks"</span>, <span class="seriesInfo">Information Security and Cryptology - ICISC 2015 pp. 20-35</span>, <span class="seriesInfo">DOI 10.1007/978-3-319-30840-1_2</span>, <time datetime="2016" class="refDate">2016</time>, <span>&lt;<a href="https://doi.org/10.1007/978-3-319-30840-1_2">https://doi.org/10.1007/978-3-319-30840-1_2</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC7748">[RFC7748]</dt>
         <dd>
