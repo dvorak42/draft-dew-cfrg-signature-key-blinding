@@ -1487,16 +1487,24 @@ specifically, skR = skS * skR (mod L).<a href="#section-6.2-1" class="pilcrow">�
       <h2 id="name-security-considerations">
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-7-1">This document describes a variant of the identity key blinding routine used in
-Tor's Hidden Service feature. Security analysis for that feature is contained
-<span>[<a href="#TORBLINDING" class="xref">TORBLINDING</a>]</span>. For EdDSA, further analysis is needed to ensure this is compliant 
-with the signature algorithm described in <span>[<a href="#RFC8032" class="xref">RFC8032</a>]</span>.<a href="#section-7-1" class="pilcrow">¶</a></p>
-<p id="section-7-2"><span>[<a href="#MSMHI15" class="xref">MSMHI15</a>]</span> demonstrate that ECDSA with attacker-controlled multiplicative blinding
+<p id="section-7-1">The signature scheme extensions in this document aim to achieve unforgeability
+and unlinkability. Informally, unforgeability means that one cannot produce a 
+valid (message, signature) pair for any blinding key without access to the 
+private signing key. Similarly, unlinkability means that one cannot distinguish
+between two signatures produced from two separate key signing keys, and two
+signatures produced from the same signing key but with different blinds. Security
+analysis of the extensions in this document with respect to these two properties
+is currently underway.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-2">Preliminary analysis has been done for a variant of these extensions used for
+identity key blinding routine used in Tor's Hidden Service feature <span>[<a href="#TORBLINDING" class="xref">TORBLINDING</a>]</span>.
+For EdDSA, further analysis is needed to ensure this is compliant with the signature
+algorithm described in <span>[<a href="#RFC8032" class="xref">RFC8032</a>]</span>.<a href="#section-7-2" class="pilcrow">¶</a></p>
+<p id="section-7-3"><span>[<a href="#MSMHI15" class="xref">MSMHI15</a>]</span> demonstrate that ECDSA with attacker-controlled multiplicative blinding
 for producing related keys can be abused to produce forgeries. In particular,
 if an attacker can control the private blinding key used in BlindKeySign, they
 can construct a forgery over a different message that validates under a different
 public key. Further analysis is needed to determine whether or not it is safe
-to keep this functionality in the specification given this problem.<a href="#section-7-2" class="pilcrow">¶</a></p>
+to keep this functionality in the specification given this problem.<a href="#section-7-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
