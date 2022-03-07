@@ -1466,11 +1466,13 @@ with DST set to "ECDSA Key Blind", L set to the value corresponding to the targe
 e.g., 48 for P-256 and 72 for P-384, expand_message_xmd with a hash function matching
 that used for the corresponding digital signature algorithm, and prime modulus equal to 
 the order p of the corresponding curve. Letting HashToScalar denote this augmentation
-process, BlindPublicKey and UnblindPublicKey are then implemented as follows:
-~~~
+process, BlindPublicKey and UnblindPublicKey are then implemented as follows:<a href="#section-6.1-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-6.1-2">
+<pre>
 BlindPublicKey(pk, skB)   = ScalarMult(pk, HashToScalar(skB))
 UnblindPublicKey(pk, skB) = ScalarMult(pk, ModInverse(HashToScalar(skB), p))
-~~~<a href="#section-6.1-1" class="pilcrow">¶</a></p>
+</pre><a href="#section-6.1-2" class="pilcrow">¶</a>
+</div>
 </section>
 </div>
 <div id="blindkeysign-2">
