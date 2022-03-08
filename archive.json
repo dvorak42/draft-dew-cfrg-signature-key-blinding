@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-02-06T00:16:32.112446+00:00",
+  "timestamp": "2022-03-08T00:17:09.114960+00:00",
   "repo": "chris-wood/draft-dew-cfrg-signature-key-blinding",
   "labels": [
     {
@@ -712,6 +712,288 @@
         }
       ],
       "reviews": []
+    },
+    {
+      "number": 18,
+      "id": "PR_kwDOGj2OAM40A3BG",
+      "title": "Add massive ECDSA disclaimer",
+      "url": "https://github.com/chris-wood/draft-dew-cfrg-signature-key-blinding/pull/18",
+      "state": "MERGED",
+      "author": "chris-wood",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "This acknowledges the related key issue and notes that it is still subject to further analysis. See #14.\r\n\r\ncc @tlepoint, @FredericJacobs",
+      "createdAt": "2022-03-07T03:01:33Z",
+      "updatedAt": "2022-03-07T14:57:44Z",
+      "baseRepository": "chris-wood/draft-dew-cfrg-signature-key-blinding",
+      "baseRefName": "main",
+      "baseRefOid": "db71cca73d473a8ce2a63182f0ea86a64d41c073",
+      "headRepository": "chris-wood/draft-dew-cfrg-signature-key-blinding",
+      "headRefName": "caw/ecdsa-disclaimer",
+      "headRefOid": "d687f4bc39894d4575cc1b702c4736dd55b3bcba",
+      "closedAt": "2022-03-07T14:57:44Z",
+      "mergedAt": "2022-03-07T14:57:44Z",
+      "mergedBy": "jedisct1",
+      "mergeCommit": {
+        "oid": "96b12f796d1ba204185a57ae2cf160246011156d"
+      },
+      "comments": [
+        {
+          "author": "tlepoint",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "LGTM, thanks!",
+          "createdAt": "2022-03-07T14:49:11Z",
+          "updatedAt": "2022-03-07T14:49:11Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOGj2OAM41uXkZ",
+          "commit": {
+            "abbreviatedOid": "d687f4b"
+          },
+          "author": "jedisct1",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-07T08:08:20Z",
+          "updatedAt": "2022-03-07T08:08:20Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "id": "PR_kwDOGj2OAM40Dxfu",
+      "title": "Use tweaked ECDSA blinding",
+      "url": "https://github.com/chris-wood/draft-dew-cfrg-signature-key-blinding/pull/19",
+      "state": "MERGED",
+      "author": "chris-wood",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "See the [corresponding PR](https://github.com/cloudflare/pat-go/pull/6).\r\n\r\ncc @tlepoint, @FredericJacobs",
+      "createdAt": "2022-03-07T18:02:09Z",
+      "updatedAt": "2022-03-07T21:32:29Z",
+      "baseRepository": "chris-wood/draft-dew-cfrg-signature-key-blinding",
+      "baseRefName": "main",
+      "baseRefOid": "96b12f796d1ba204185a57ae2cf160246011156d",
+      "headRepository": "chris-wood/draft-dew-cfrg-signature-key-blinding",
+      "headRefName": "caw/different-ecdsa-blinding",
+      "headRefOid": "ca15e2b1f1ce3ec269c4c38516de3d7f9a3a4d5d",
+      "closedAt": "2022-03-07T21:32:29Z",
+      "mergedAt": "2022-03-07T21:32:29Z",
+      "mergedBy": "chris-wood",
+      "mergeCommit": {
+        "oid": "13bd6e90401ba1ea0024e8273561ae0b8ccd2cfb"
+      },
+      "comments": [
+        {
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "body": "@jedisct1 please let me know what you think!",
+          "createdAt": "2022-03-07T18:34:29Z",
+          "updatedAt": "2022-03-07T18:34:29Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOGj2OAM41xKFb",
+          "commit": {
+            "abbreviatedOid": "ecbe553"
+          },
+          "author": "tlepoint",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2022-03-07T18:18:53Z",
+          "updatedAt": "2022-03-07T18:22:54Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "This value is the prime modulus `p` of the curve, not its order `n`. (Cf. Section 4.2.1.3 https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-186-draft.pdf)",
+              "createdAt": "2022-03-07T18:18:53Z",
+              "updatedAt": "2022-03-07T18:22:54Z"
+            },
+            {
+              "originalPosition": 37,
+              "body": "```suggestion\r\nspecifically, skR = skS \\* HashToScalar(skB) (mod p).\r\n```",
+              "createdAt": "2022-03-07T18:21:01Z",
+              "updatedAt": "2022-03-07T18:22:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOGj2OAM41xLjZ",
+          "commit": {
+            "abbreviatedOid": "ecbe553"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-03-07T18:24:26Z",
+          "updatedAt": "2022-03-07T18:24:26Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "Oops, existing bug. Thanks for flagging! (Also, do you have these memorized? \ud83d\ude06 )",
+              "createdAt": "2022-03-07T18:24:26Z",
+              "updatedAt": "2022-03-07T18:24:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOGj2OAM41xLwc",
+          "commit": {
+            "abbreviatedOid": "96904ac"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-03-07T18:25:10Z",
+          "updatedAt": "2022-03-07T18:25:11Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\r\nP-256, p = 115792089210356248762697446949407573529996955224135760342422259061068512044369.\r\n```",
+              "createdAt": "2022-03-07T18:25:10Z",
+              "updatedAt": "2022-03-07T18:25:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOGj2OAM41xOMB",
+          "commit": {
+            "abbreviatedOid": "ecbe553"
+          },
+          "author": "tedeaton",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-07T18:33:46Z",
+          "updatedAt": "2022-03-07T18:33:46Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOGj2OAM41xX2V",
+          "commit": {
+            "abbreviatedOid": "ca15e2b"
+          },
+          "author": "tlepoint",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-07T19:10:08Z",
+          "updatedAt": "2022-03-07T19:10:08Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "id": "PR_kwDOGj2OAM40DziG",
+      "title": "Informally define goals and note ongoing analysis",
+      "url": "https://github.com/chris-wood/draft-dew-cfrg-signature-key-blinding/pull/20",
+      "state": "MERGED",
+      "author": "chris-wood",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "We can expand on this when we have more results.\r\n\r\ncc @tlepoint, @FredericJacobs",
+      "createdAt": "2022-03-07T18:10:59Z",
+      "updatedAt": "2022-03-07T18:57:18Z",
+      "baseRepository": "chris-wood/draft-dew-cfrg-signature-key-blinding",
+      "baseRefName": "main",
+      "baseRefOid": "96b12f796d1ba204185a57ae2cf160246011156d",
+      "headRepository": "chris-wood/draft-dew-cfrg-signature-key-blinding",
+      "headRefName": "caw/goals",
+      "headRefOid": "e704980c44b969b056c87d252fceb82153a210fe",
+      "closedAt": "2022-03-07T18:57:18Z",
+      "mergedAt": "2022-03-07T18:57:18Z",
+      "mergedBy": "chris-wood",
+      "mergeCommit": {
+        "oid": "cc7b06ab01b02465ef120ab390507a071c68a2e8"
+      },
+      "comments": [
+        {
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "body": "@tedeaton I'd be OK with that improvement. @tlepoint, what do you think?",
+          "createdAt": "2022-03-07T18:33:26Z",
+          "updatedAt": "2022-03-07T18:33:26Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOGj2OAM41xJNP",
+          "commit": {
+            "abbreviatedOid": "62272ec"
+          },
+          "author": "tlepoint",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-07T18:15:33Z",
+          "updatedAt": "2022-03-07T18:15:33Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOGj2OAM41xN1f",
+          "commit": {
+            "abbreviatedOid": "62272ec"
+          },
+          "author": "tedeaton",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "Should we change the informal definition of unforgeability to emphasize the more general powers an adversary has? Something like \"Informally, unforgeability means that one cannot produce a valid (message, signature) pair for __any__ blinding key without access to the private signing key.\"",
+          "createdAt": "2022-03-07T18:32:25Z",
+          "updatedAt": "2022-03-07T18:32:25Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOGj2OAM41xQC4",
+          "commit": {
+            "abbreviatedOid": "62272ec"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-03-07T18:40:56Z",
+          "updatedAt": "2022-03-07T18:40:57Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "```suggestion\r\nand unlinkability. Informally, unforgeability means that one cannot produce a \r\nvalid (message, signature) pair for any blinding key without access to the \r\nprivate signing key. Similarly, unlinkability means that one cannot distinguish\r\n```",
+              "createdAt": "2022-03-07T18:40:57Z",
+              "updatedAt": "2022-03-07T18:40:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOGj2OAM41xUBD",
+          "commit": {
+            "abbreviatedOid": "62272ec"
+          },
+          "author": "tlepoint",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-03-07T18:56:02Z",
+          "updatedAt": "2022-03-07T18:56:02Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "LGTM!",
+              "createdAt": "2022-03-07T18:56:02Z",
+              "updatedAt": "2022-03-07T18:56:02Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
