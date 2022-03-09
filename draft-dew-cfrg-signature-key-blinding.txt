@@ -5,10 +5,10 @@
 WG Working Group                                                F. Denis
 Internet-Draft                                               Fastly Inc.
 Intended status: Informational                                  E. Eaton
-Expires: 8 September 2022                         University of Waterloo
+Expires: 10 September 2022                        University of Waterloo
                                                               C. A. Wood
                                                         Cloudflare, Inc.
-                                                            7 March 2022
+                                                            9 March 2022
 
 
                    Key Blinding for Signature Schemes
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 September 2022.
+   This Internet-Draft will expire on 10 September 2022.
 
 Copyright Notice
 
@@ -90,7 +90,7 @@ Table of Contents
    8.  IANA Considerations
    9.  Test Vectors
      9.1.  Ed25519 Test Vectors
-     9.2.  ECDSA(P-256, SHA-256) Test Vectors
+     9.2.  ECDSA(P-384, SHA-384) Test Vectors
    10. References
      10.1.  Normative References
      10.2.  Informative References
@@ -413,9 +413,9 @@ message: 68656c6c6f20776f726c64
 signature: b38b9d67cb4182e91a86b2eb0591e04c10471c1866202dd1b3b076fb86a61
 c7c4ab5d626e5c5d547a584ca85d44839c13f6c976ece0dcba53d82601e6737a400
 
-9.2.  ECDSA(P-256, SHA-256) Test Vectors
+9.2.  ECDSA(P-384, SHA-384) Test Vectors
 
-   This section contains test vectors for ECDSA with P-256 and SHA-256,
+   This section contains test vectors for ECDSA with P-384 and SHA-384,
    as described in [ECDSA].  Each test vector lists the signing and
    blinding keys, denoted skS and skB, each serialized as a big-endian
    integers and encoded as hexadecimal strings.  Each test vector also
