@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-03-08T00:17:09.114960+00:00",
+  "timestamp": "2022-03-10T00:16:13.136686+00:00",
   "repo": "chris-wood/draft-dew-cfrg-signature-key-blinding",
   "labels": [
     {
@@ -992,6 +992,56 @@
               "updatedAt": "2022-03-07T18:56:02Z"
             }
           ]
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "id": "PR_kwDOGj2OAM40M4yA",
+      "title": "Fix test vector parameters",
+      "url": "https://github.com/chris-wood/draft-dew-cfrg-signature-key-blinding/pull/21",
+      "state": "MERGED",
+      "author": "chris-wood",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-03-09T22:31:02Z",
+      "updatedAt": "2022-03-09T22:47:40Z",
+      "baseRepository": "chris-wood/draft-dew-cfrg-signature-key-blinding",
+      "baseRefName": "main",
+      "baseRefOid": "e9a9fb05463919814f651e498d5fcc14e89d219b",
+      "headRepository": "chris-wood/draft-dew-cfrg-signature-key-blinding",
+      "headRefName": "chris-wood-patch-2",
+      "headRefOid": "005dfdd439475cb9d9d73eddee8cb7897f747eb7",
+      "closedAt": "2022-03-09T22:47:40Z",
+      "mergedAt": "2022-03-09T22:47:40Z",
+      "mergedBy": "jedisct1",
+      "mergeCommit": {
+        "oid": "4da09488759f720c6f0405a948fbcb7535894872"
+      },
+      "comments": [
+        {
+          "author": "jedisct1",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Errrr, yeah. Good catch :) ",
+          "createdAt": "2022-03-09T22:47:12Z",
+          "updatedAt": "2022-03-09T22:47:12Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOGj2OAM418nRF",
+          "commit": {
+            "abbreviatedOid": "005dfdd"
+          },
+          "author": "jedisct1",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-09T22:47:20Z",
+          "updatedAt": "2022-03-09T22:47:20Z",
+          "comments": []
         }
       ]
     }
