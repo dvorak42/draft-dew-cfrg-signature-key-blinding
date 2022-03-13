@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-03-10T00:16:13.136686+00:00",
+  "timestamp": "2022-03-13T00:18:03.158333+00:00",
   "repo": "chris-wood/draft-dew-cfrg-signature-key-blinding",
   "labels": [
     {
@@ -272,6 +272,54 @@
           "updatedAt": "2022-02-03T01:54:13Z"
         }
       ]
+    },
+    {
+      "number": 22,
+      "id": "I_kwDOGj2OAM5Fedfi",
+      "title": "Mention public key signing as related-key attack mitigation",
+      "url": "https://github.com/chris-wood/draft-dew-cfrg-signature-key-blinding/issues/22",
+      "state": "OPEN",
+      "author": "chris-wood",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "One standard mitigation to the related-key forgery attack is to sign the public key alongside the message. This then requires the verifier to include the public key as part of the input message, which changes the verification interface. Nevertheless, it seems useful to note. \r\n\r\ncc @kwantam for separately noting this! \ud83d\ude4f ",
+      "createdAt": "2022-03-10T19:07:39Z",
+      "updatedAt": "2022-03-10T19:07:39Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 23,
+      "id": "I_kwDOGj2OAM5Fed3f",
+      "title": "Add private airdrop as another application",
+      "url": "https://github.com/chris-wood/draft-dew-cfrg-signature-key-blinding/issues/23",
+      "state": "OPEN",
+      "author": "chris-wood",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": " It was used [in this work](https://eprint.iacr.org/2020/676.pdf). Section 3 discusses the construction for ECDSA, for example. \r\n\r\nThanks to @kwantam for pointing this out! ",
+      "createdAt": "2022-03-10T19:09:18Z",
+      "updatedAt": "2022-03-10T19:11:04Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 24,
+      "id": "I_kwDOGj2OAM5FfUNR",
+      "title": "Add more motivation",
+      "url": "https://github.com/chris-wood/draft-dew-cfrg-signature-key-blinding/issues/24",
+      "state": "OPEN",
+      "author": "chris-wood",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "It's been observed by several people that the motivation for this primitive is not particularly clear. We should motivate with additional applications (like #23), including at least one concrete use case. We could use a simplified version of the rate-limited draft for that.",
+      "createdAt": "2022-03-10T23:29:42Z",
+      "updatedAt": "2022-03-10T23:29:42Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
